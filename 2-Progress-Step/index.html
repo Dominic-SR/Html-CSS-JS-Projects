@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progress Step</title>
     <style>
+        
         *{
             margin: 0;
             padding: 0;
@@ -17,6 +18,7 @@
             align-items: center;
             height: 100vh;
             width: 100vw;
+            background: #000;
         }
 
         .container{
@@ -34,7 +36,7 @@
 
         .progress-container::before{
             content: "";
-            background-color: aqua;
+            background-color: #fff;
             position: absolute;
             top: 50%;
             left: 0;
@@ -45,7 +47,7 @@
         }
 
         .progress{
-            background: aqua;
+            background: #fff;
             position: absolute;
             top: 50%;
             left: 0;
@@ -57,25 +59,25 @@
         }
 
         .circle{
-            background-color: #fff;
-            color: #999;
+            background-color: #000;
+            color: #fff;
             border-radius: 50%;
             height: 30px;
             width: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 3px solid aqua;
-            transition: 0.4s ease-in;
+            border: 3px solid #fff;
+            transition: 0.4s ease;
         }
 
         .circle.active{
-            border-color: red;
+            border-color: greenyellow;
         }
 
         .btn{
-            background-color: aqua;
-            color: #fff;
+            background-color: #fff;
+            color: #000;
             border: 0;
             border-radius: 6px;
             cursor: pointer;
@@ -86,23 +88,33 @@
         }
 
         .btn.active{
-            /* transform: e; */
+            transform: scale(0.98);
         }
+
+        .btn:focus{
+            outline:0;
+        }
+
+        .btn:disabled{
+            background-color: #fff;
+            cursor: not-allowed;
+        }
+
 
     </style>
 </head>
 <body>
     <div class="container">
         <div class="progress-container">
-            <div class="progress" id="progress">
+            <div class="progress" id="progress"></div>
                 <div class="circle active">1</div>
                 <div class="circle">2</div>
                 <div class="circle">3</div>
                 <div class="circle">4</div>
-            </div>
+            
         </div>
-        <div class="btn" id="prev">Prev</div>
-        <div class="btn" id="next">Next</div>
+        <button class="btn" id="prev" disabled>Prev</button>
+        <button class="btn" id="next">Next</button>
     </div>
 </body>
 </html>

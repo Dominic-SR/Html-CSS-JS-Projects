@@ -76,6 +76,15 @@ body {
       <input type="text" class="input" placeholder="Search..." />
       <button class="btn"><i class="fas fa-search"></i></button>
     </div>
-    <script src="script.js"></script>
+    <script>
+      const search = document.querySelector(".search");
+      const btn = document.querySelector(".btn");
+      const input = document.querySelector(".input");
+
+      btn.addEventListener("click", () => {
+        search.classList.toggle("active");
+        input.focus();
+      });
+    </script>
   </body>
 </html>
